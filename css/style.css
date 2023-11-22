@@ -1,0 +1,319 @@
+@keyframes backOutUp {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-700px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes backInDown {
+  0% {
+    transform: translateY(-1200px);
+    opacity: 0.7;
+  }
+  80% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+body .header {
+  position: relative;
+}
+@media (min-width: 400px) {
+  body .header .nav {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  body .header .nav {
+    width: 100%;
+    height: 122px;
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 0%;
+    transition: top 0.5s linear;
+    z-index: 10;
+  }
+  body .header .nav .nav-content {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 85%;
+  }
+  body .header .nav .nav-content .nav-content-logo {
+    width: 50%;
+  }
+  body .header .nav .nav-content .nav-content-logo img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  body .header .nav .nav-content .nav-content-logo span {
+    font-family: Noto Sans JP;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #000;
+    left: 163px;
+  }
+  body .header .nav .nav-content .nav-content-logo input {
+    font-family: Noto Sans JP;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 40%;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #d4d4d4;
+    background: #fff;
+    margin-left: 3%;
+    color: #d4d1d4;
+  }
+  body .header .nav .nav-content .nav-content-logo svg {
+    position: relative;
+    left: -8%;
+    top: -3px;
+  }
+  body .header .nav .nav-content .top-blog {
+    font-family: Noto Sans JP;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 51px;
+    height: 31px;
+    background-color: #770303;
+    color: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15px;
+    left: 65%;
+  }
+  body .header .nav .nav-content .create-blog {
+    font-family: Noto Sans JP;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 75%;
+  }
+  body .header .nav .nav-content .profile {
+    position: absolute;
+    left: 90%;
+    top: 15px;
+    display: flex;
+    align-items: center;
+  }
+  body .header .nav .nav-content .profile span {
+    font-family: Noto Sans JP;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #212121;
+    padding-right: 17px;
+    white-space: nowrap;
+  }
+}
+body .header-mobile {
+  width: 100%;
+  height: 69px;
+  background: #fff;
+  box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  position: relative;
+}
+@media (min-width: 769px) {
+  body .header-mobile {
+    display: none;
+  }
+}
+body .header-mobile .menu {
+  position: relative;
+  top: 16px;
+  left: 10%;
+}
+body .header-mobile .menu svg {
+  cursor: pointer;
+}
+body .header-mobile .logo-mobile {
+  top: 50%;
+  left: 50%;
+  position: relative;
+  display: flex;
+  height: 45px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+body .header-mobile .logo-mobile span {
+  font-family: Noto Sans JP;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #000;
+  align-self: center;
+}
+body .header-mobile .logo-search-mobile {
+  position: relative;
+  top: 16px;
+  left: 80%;
+}
+body .header-mobile .logo-search-mobile svg {
+  cursor: pointer;
+}
+body .image-banner {
+  width: 100%;
+  height: 520px;
+}
+body select {
+  font-family: Noto Sans JP;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 144px;
+  height: 40px;
+  color: #212121;
+}
+body select option {
+  margin-left: 20px;
+}
+body .container .header-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-top: 73px;
+  margin-bottom: 38px;
+  justify-content: space-between;
+}
+body .row .blog {
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  padding: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 70px;
+}
+body .row .blog .card-body .name-and-time {
+  display: flex;
+  padding-bottom: 15px;
+}
+body .row .blog .card-body .name-and-time .name {
+  position: flex;
+  padding-right: 21px;
+  left: 0px;
+}
+body .row .blog .card-body .read-more {
+  width: 140px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #e4e4e4;
+  background: #fff;
+}
+body .row .blog .card-body .read-more .text-read-more {
+  font-family: Noto Sans JP;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  color: #c40000;
+}
+body .row .blog .card-body .read-more .text-read-more:hover {
+  color: #c40000;
+  text-decoration: none !important;
+}
+body .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 102px;
+}
+body .page a {
+  color: #211e3b;
+  font-family: SVN-Gilroy;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  line-height: 28px;
+  padding: 8px 14px;
+  text-decoration: none;
+}
+body .page a:hover {
+  color: #b90a0a;
+  background-color: #f5a9a9;
+  border-radius: 50%;
+}
+body .page .previous {
+  color: #b90a0a;
+  background-color: #c40000;
+  border-radius: 50%;
+}
+body .page .after {
+  background-color: #e5e5e5;
+  border-radius: 50%;
+}
+body .footer {
+  width: 100%;
+  height: 94px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+body .footer div {
+  font-family: Noto Sans JP;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+}
+body .backOutUp {
+  animation-name: backOutUp;
+  animation-duration: 3s;
+}
+body .backInDown {
+  animation-name: backInDown;
+  animation-duration: 1s;
+}
