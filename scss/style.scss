@@ -1,12 +1,10 @@
 $color-1: #c40000;
 $color-2: #b90a0a;
 $color-3: #fff;
+$color-4: #212121;
+$color-5: #000;
 $font-family-1: Noto Sans JP;
 $font-family-2: SVN-Gilroy;
-$align-items: center;
-$font-style-normal: normal;
-$width-pc: 400px;
-$width-pesponsive: 768px;
 $full: 100%;
 $transform-center: translate(-50%, -50%);
 $position-absolute: absolute;
@@ -15,9 +13,9 @@ $position-absolute: absolute;
     @content;
   }
 }
-@mixin cennter {
-  top: 50%;
-  left: 50%;
+@mixin position($top, $left) {
+  top: $top;
+  left: $left;
 }
 @mixin font-style($font, $size, $width) {
   font-family: $font;
@@ -35,6 +33,15 @@ $position-absolute: absolute;
   justify-content: center;
   align-items: center;
 }
+@mixin center-flex-absolute {
+  @include center-flex;
+  position: absolute;
+}
+@mixin flex-relative {
+  display: flex;
+  position: relative;
+}
+
 @keyframes backOutUp {
   0% {
     transform: scale(1);
@@ -81,11 +88,11 @@ body {
         transition: top 0.5s linear;
         z-index: 10;
         .nav-content {
-          @include cennter;
+          @include position(50%, 50%);
           position: $position-absolute;
           transform: $transform-center;
           width: 85%;
-          .nav-content-logo {
+          .nav-logo {
             width: 50%;
             img {
               max-width: $full;
@@ -93,7 +100,7 @@ body {
             }
             span {
               @include font-style($font-family-1, 20px, 700);
-              color: #000;
+              color: $color-5;
               left: 163px;
             }
             input {
@@ -101,48 +108,38 @@ body {
               @include size(40%, 45px);
               border-radius: 4px;
               border: 1px solid #d4d4d4;
-              background: #fff;
+              background: $color-3;
               margin-left: 3%;
-              color: #d4d1d4;
+              padding: 13px 50px 13px 20px;
             }
             svg {
               position: relative;
-              left: -8%;
-              top: -3px;
+              cursor: pointer;
+              @include position(-3px, -8%);
             }
           }
           .top-blog {
             @include font-style($font-family-1, 15px, 500);
             @include size(51px, 31px);
+            @include position(15px, 60%);
+            @include center-flex;
             background-color: #770303;
-            color: #fff;
+            color: $color-3;
             border-radius: 4px;
-            display: flex;
-            align-items: $align-items;
-            justify-content: center;
             position: $position-absolute;
-            top: 15px;
-            left: 65%;
           }
           .create-blog {
             @include font-style($font-family-1, 15px, 500);
-            color: #212121;
-            display: flex;
-            align-items: $align-items;
-            justify-content: center;
-            position: $position-absolute;
-            top: 20px;
-            left: 75%;
+            @include center-flex-absolute;
+            @include position(20px, 74%);
+            color: $color-4;
           }
           .profile {
-            position: $position-absolute;
-            left: 90%;
-            top: 15px;
-            display: flex;
-            align-items: $align-items;
+            @include position(15px, 87%);
+            @include center-flex-absolute;
             span {
               @include font-style($font-family-1, 15px, 500);
-              color: #212121;
+              color: $color-4;
               padding-right: 17px;
               white-space: nowrap;
             }
@@ -156,35 +153,32 @@ body {
       display: none;
     }
     @include size($full, 69px);
-    background: #fff;
+    @include flex-relative;
+    background: $color-3;
     box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.25);
-    display: flex;
-    position: relative;
     .menu {
       position: relative;
-      top: 16px;
-      left: 10%;
+      @include position(16px, 10%);
       svg {
         cursor: pointer;
       }
     }
     .logo-mobile {
-      @include cennter;
-      position: relative;
-      display: flex;
+      @include position(50%, 50%);
+      @include center-flex;
+      @include flex-relative;
       height: 45px;
       position: $position-absolute;
       transform: $transform-center;
       span {
         @include font-style($font-family-1, 20px, 700);
-        color: #000;
+        color: $color-5;
         align-self: center;
       }
     }
     .logo-search-mobile {
       position: relative;
-      top: 16px;
-      left: 80%;
+      @include position(16px, 80%);
       svg {
         cursor: pointer;
       }
@@ -196,7 +190,7 @@ body {
   select {
     @include font-style($font-family-1, 15px, 500);
     @include size(144px, 40px);
-    color: #212121;
+    color: $color-4;
     option {
       margin-left: 20px;
     }
@@ -281,7 +275,7 @@ body {
   .footer {
     @include size($full, 94px);
     @include center-flex;
-    background: #000;
+    background: $color-5;
     div {
       @include font-style($font-family-1, 15px, 500);
       color: $color-3;
@@ -293,6 +287,6 @@ body {
   }
   .backInDown {
     animation-name: backInDown;
-    animation-duration: 1s;
+    animation-duration: 3s;
   }
 }
