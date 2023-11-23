@@ -314,11 +314,11 @@ body .footer div {
   line-height: normal;
   color: #fff;
 }
-body .backOutUp {
-  animation-name: backOutUp;
+body .back-out-up {
+  animation-name: back-out-up;
   animation-duration: 3s;
 }
-body .backInDown {
-  animation-name: backInDown;
+body .back-in-down {
+  animation-name: back-in-dow;
   animation-duration: 3s;
 }
