@@ -316,9 +316,9 @@ body .footer div {
 }
 body .back-out-up {
   animation-name: back-out-up;
-  animation-duration: 3s;
+  animation-duration: 1s;
 }
 body .back-in-down {
-  animation-name: back-in-dow;
-  animation-duration: 3s;
+  animation-name: back-in-down;
+  animation-duration: 1s;
 }

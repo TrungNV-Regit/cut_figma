@@ -1,13 +1,11 @@
 let header = document.querySelector("#headerScroll");
-let previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-window.addEventListener('scroll', function () {
-    let currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    if (currentScrollPosition > previousScrollPosition) {
+document.addEventListener('scroll', function () {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
         header.classList.remove('back-in-down');
         header.classList.add('back-out-up');
-    } else if (currentScrollPosition < previousScrollPosition) {
+    }
+    else if (document.body.scrollTop == 0 || document.documentElement.scrollTop == 0) {
         header.classList.remove('back-out-up');
         header.classList.add('back-in-down');
     }
-    previousScrollPosition = currentScrollPosition;
 });
