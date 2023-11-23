@@ -1,0 +1,250 @@
+@import "variable.scss";
+@import "mixin.scss";
+@keyframes back-out-up {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-700px);
+    opacity: 0.7;
+  }
+}
+@keyframes back-in-down {
+  0% {
+    transform: translateY(-1200px);
+    opacity: 0.7;
+  }
+  80% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+body {
+  width: $full;
+  overflow-x: hidden;
+  .header {
+    position: relative;
+    .nav {
+      @include breakpoint(400px) {
+        display: none;
+      }
+      @include breakpoint(768px) {
+        @include size($full, 122px);
+        background: rgba(255, 255, 255, 0.65);
+        box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.25);
+        position: fixed;
+        top: 0%;
+        transition: top 0.5s linear;
+        z-index: 10;
+        .nav-content {
+          @include position(50%, 50%);
+          position: $position-absolute;
+          transform: $transform-center;
+          width: 85%;
+          .nav-logo {
+            width: 50%;
+            img {
+              max-width: $full;
+              max-height: $full;
+            }
+            span {
+              @include font-style($font-family-1, 20px, 700);
+              color: $color-5;
+              left: 163px;
+            }
+            input {
+              @include font-style($font-family-1, 15px, 500);
+              @include size(40%, 45px);
+              border-radius: 4px;
+              border: 1px solid #d4d4d4;
+              background: $color-3;
+              margin-left: 3%;
+              padding: 13px 50px 13px 20px;
+            }
+            svg {
+              position: relative;
+              cursor: pointer;
+              @include position(-3px, -8%);
+            }
+          }
+          .top-blog {
+            @include font-style($font-family-1, 15px, 500);
+            @include size(51px, 31px);
+            @include position(15px, 60%);
+            @include center-flex;
+            background-color: #770303;
+            color: $color-3;
+            border-radius: 4px;
+            position: $position-absolute;
+          }
+          .create-blog {
+            @include font-style($font-family-1, 15px, 500);
+            @include center-flex-absolute;
+            @include position(20px, 74%);
+            color: $color-4;
+          }
+          .profile {
+            @include position(15px, 87%);
+            @include center-flex-absolute;
+            span {
+              @include font-style($font-family-1, 15px, 500);
+              color: $color-4;
+              padding-right: 17px;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+  .header-mobile {
+    @include breakpoint(769px) {
+      display: none;
+    }
+    @include size($full, 69px);
+    @include flex-relative;
+    background: $color-3;
+    box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.25);
+    .menu {
+      position: relative;
+      @include position(16px, 10%);
+      svg {
+        cursor: pointer;
+      }
+    }
+    .logo-mobile {
+      @include position(50%, 50%);
+      @include center-flex;
+      @include flex-relative;
+      height: 45px;
+      position: $position-absolute;
+      transform: $transform-center;
+      span {
+        @include font-style($font-family-1, 20px, 700);
+        color: $color-5;
+        align-self: center;
+      }
+    }
+    .logo-search-mobile {
+      position: relative;
+      @include position(16px, 80%);
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
+  .image-banner {
+    @include size($full, 520px);
+  }
+  select {
+    @include font-style($font-family-1, 15px, 500);
+    @include size(144px, 40px);
+    color: $color-4;
+    option {
+      margin-left: 20px;
+    }
+  }
+  .container {
+    .header-body {
+      @include center-flex;
+      margin-left: auto;
+      margin-top: 73px;
+      margin-bottom: 38px;
+      justify-content: space-between;
+    }
+  }
+  .row {
+    .blog {
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: $color-3;
+      background-clip: border-box;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 0.25rem;
+      padding: 0;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      margin-bottom: 70px;
+      .card-body {
+        .name-and-time {
+          display: flex;
+          padding-bottom: 15px;
+          .name {
+            position: flex;
+            padding-right: 21px;
+            left: 0px;
+          }
+        }
+        .read-more {
+          @include size(140px, 40px);
+          @include center-flex;
+          border-radius: 4px;
+          border: 1px solid #e4e4e4;
+          background: $color-3;
+          .text-read-more {
+            @include font-style($font-family-1, 14px, 400);
+            text-decoration: none;
+            color: $color-1;
+            &:hover {
+              color: $color-1;
+              text-decoration: none !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .page {
+    @include center-flex;
+    width: $full;
+    padding-bottom: 102px;
+    a {
+      color: #211e3b;
+      @include font-style($font-family-2, 20px, 700);
+      line-height: 28px;
+      padding: 8px 14px;
+      text-decoration: none;
+      &:hover {
+        color: $color-2;
+        background-color: #f5a9a9;
+        border-radius: 50%;
+      }
+    }
+    .previous {
+      color: $color-2;
+      background-color: #c40000;
+      border-radius: 50%;
+    }
+    .after {
+      background-color: #e5e5e5;
+      border-radius: 50%;
+    }
+  }
+  .footer {
+    @include size($full, 94px);
+    @include center-flex;
+    background: $color-5;
+    div {
+      @include font-style($font-family-1, 15px, 500);
+      color: $color-3;
+    }
+  }
+  .back-out-up {
+    animation-name: back-out-up;
+    animation-duration: 1s;
+  }
+  .back-in-down {
+    animation-name: back-in-down;
+    animation-duration: 1s;
+  }
+}
