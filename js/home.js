@@ -3,11 +3,11 @@ let previousScrollPosition = window.pageYOffset || document.documentElement.scro
 window.addEventListener('scroll', function () {
     let currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     if (currentScrollPosition > previousScrollPosition) {
-        header.classList.remove('backInDown');
-        header.classList.add('backOutUp');
+        header.classList.remove('back-in-down');
+        header.classList.add('back-out-up');
     } else if (currentScrollPosition < previousScrollPosition) {
-        header.classList.remove('backOutUp');
-        header.classList.add('backInDown');
+        header.classList.remove('back-out-up');
+        header.classList.add('back-in-down');
     }
     previousScrollPosition = currentScrollPosition;
 });

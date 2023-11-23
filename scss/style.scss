@@ -1,48 +1,6 @@
-$color-1: #c40000;
-$color-2: #b90a0a;
-$color-3: #fff;
-$color-4: #212121;
-$color-5: #000;
-$font-family-1: Noto Sans JP;
-$font-family-2: SVN-Gilroy;
-$full: 100%;
-$transform-center: translate(-50%, -50%);
-$position-absolute: absolute;
-@mixin breakpoint($size) {
-  @media (min-width: $size) {
-    @content;
-  }
-}
-@mixin position($top, $left) {
-  top: $top;
-  left: $left;
-}
-@mixin font-style($font, $size, $width) {
-  font-family: $font;
-  font-size: $size;
-  font-style: normal;
-  font-weight: $width;
-  line-height: normal;
-}
-@mixin size($width, $height) {
-  width: $width;
-  height: $height;
-}
-@mixin center-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@mixin center-flex-absolute {
-  @include center-flex;
-  position: absolute;
-}
-@mixin flex-relative {
-  display: flex;
-  position: relative;
-}
-
-@keyframes backOutUp {
+@import "variable.scss";
+@import "mixin.scss";
+@keyframes back-out-up {
   0% {
     transform: scale(1);
     opacity: 1;
@@ -56,7 +14,7 @@ $position-absolute: absolute;
     opacity: 0.7;
   }
 }
-@keyframes backInDown {
+@keyframes back-in-down {
   0% {
     transform: translateY(-1200px);
     opacity: 0.7;

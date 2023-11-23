@@ -1,4 +1,4 @@
-@keyframes backOutUp {
+@keyframes back-out-up {
   0% {
     transform: scale(1);
     opacity: 1;
@@ -13,7 +13,7 @@
   }
 }
 
-@keyframes backInDown {
+@keyframes back-in-down {
   0% {
     transform: translateY(-1200px);
     opacity: 0.7;
